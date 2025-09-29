@@ -1,0 +1,72 @@
+<!-- calculator.html -->
+<!-- Сайт розроблено студентом Кирилом Єрьоміним, група ФЕМП 5-3з -->
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Калькулятор — Калькулятор бізнес-кредиту</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-bright">
+  <header class="site-header">
+    <div class="logo">💼 <span>BizCalc</span></div>
+    <nav class="nav" aria-label="Головне меню">
+      <a href="index.html" class="nav-item">
+        <span class="icon">🏠</span>
+        <span class="label">Головна</span>
+      </a>
+      <a href="calculator.html" class="nav-item active">
+        <span class="icon">🧮</span>
+        <span class="label">Калькулятор</span>
+      </a>
+      <a href="about.html" class="nav-item">
+        <span class="icon">👤</span>
+        <span class="label">Про мене</span>
+      </a>
+      <div class="nav-underline" aria-hidden="true"></div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="calc-panel glass">
+      <h2>Розрахунок щомісячного платежу</h2>
+
+      <form id="loan-form" onsubmit="return false;" novalidate>
+        <label>
+          Сума кредиту (₴)
+          <input id="amount" type="number" min="0" step="100" placeholder="Наприклад, 500000">
+        </label>
+
+        <label>
+          Термін (місяців)
+          <input id="term" type="number" min="1" step="1" placeholder="Наприклад, 36">
+        </label>
+
+        <label>
+          Річна відсоткова ставка (%)
+          <input id="rate" type="number" min="0" step="0.01" placeholder="Наприклад, 12.5">
+        </label>
+
+        <div class="actions">
+          <button id="calc-btn" class="btn btn-primary">Розрахувати</button>
+          <button id="reset-btn" class="btn btn-ghost" type="button">Очистити</button>
+        </div>
+      </form>
+
+      <div id="results" class="results" aria-live="polite">
+        <div class="result-item">Щомісячний платіж: <strong id="monthly">—</strong></div>
+        <div class="result-item">Загальна переплата: <strong id="overpay">—</strong></div>
+      </div>
+
+      <p class="note">Примітка: розрахунок виконаний за формулою ануїтетного платежу. Усі обчислення відбуваються на стороні клієнта.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>Сайт розроблено студентом Кирилом Єрьоміним, група ФЕМП 5-3з</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
